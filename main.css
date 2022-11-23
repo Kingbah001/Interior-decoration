@@ -5,7 +5,21 @@
 }
 
 /* mobile version starts */
-.mobile-hero{
+.backdrop {
+    width: 100%;
+    height: 100%;
+    background: var(#777);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+}
+
+.show-backdrop {
+    display: block;
+}
+
+.mobile-hero {
     /* border: 3px solid black; */
     background: url(./images/header.png);
     background-position: center;
@@ -14,45 +28,136 @@
     display: none;
     width: 100%;
 }
-.mobile-hamburger{
+
+.hamburger {
+    /* border: 3px solid purple; */
+    height: 35px;
+    width: 35px;
+    margin: 60px 30px 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 6;
+}
+
+.menu {
+    height: 3px;
+    width: 100%;
+    background: transparent;
+    position: relative;
+}
+
+.menu::before {
+    content: "";
+    width: 100%;
+    height: 3px;
+    background: white;
+    position: absolute;
+    transform: translateY(-10px);
+}
+
+.menu::after {
+    content: "";
+    width: 100%;
+    height: 3px;
+    background: white;
+    position: absolute;
+    transform: translateY(10px);
+}
+
+.showburger .menu {
+    background: transparent;
+}
+
+.showburger .menu::before {
+    transform: translateY(0) rotate(-45deg);
+    background: white;
+}
+
+.showburger .menu::after {
+    transform: translateY(0) rotate(45deg);
+    background: white;
+}
+.home{
+    /* border: 3px solid brown; */
+    margin-left: 40px;
+}
+.showhome{
+    transform: translateY(60%); 
+    transition: all 1.0s ease;
+}
+
+.mobile-links-holder {
+    transform: translateX(200%);
+    margin-top: 100px;
     /* border: 3px solid black; */
-    width: 50px;
-    height: 50px;
-    margin: 50px 20px 0 0;
-    padding-top: 10px;
+    position: fixed;
+    right: 0;
+    top: 0;
+    height: 50vh;
+    width: 100%;
+    transition: all 0.7s ease;
+    /* background: rgb(230, 230, 230); */
 }
-.dash{
-    border: 3px solid white;
-    width: 40px;
-    margin-bottom: 15px;
+.mobile-links-holder a{
+     background: rgb(230, 230, 230);
 }
-.mobile-lefthero{
+.mobile-links-holder li .active-link{
+    /* border: 3px solid tomato; */
+    color: white;
+    background: transparent;
+}
+
+.show-mobile-links-holder {
+    transform: translateX(0);
+}
+
+.mobile-links-holder ul {
+    list-style: none;
+}
+
+.mobile-links-holder a {
+    color: rgb(105, 83, 83);
+    text-decoration: none;
+    display: block;
+    padding: 15px 0 15px 35px;
+    font-size: 35px;
+}
+
+.mobile-lefthero {
     width: 100%;
     color: white;
     text-align: center;
 }
-.mobile-header{
-   display: flex;
-   margin-bottom: 150px;
-   margin-left: 20px;
-   margin-top: 45px;
+
+.mobile-header {
+    display: flex;
+    margin-bottom: 150px;
+    margin-left: 20px;
+    margin-top: 45px;
 }
-.mobile-header h2{
+
+.mobile-header h2 {
     font-size: 50px;
+    padding-left: 25px;
 }
-.mobile-head{
+
+.mobile-head {
     font-family: sans-serif;
     font-weight: bold;
 }
-.mobile-head p{
+
+.mobile-head p {
     margin: 40px 0;
-    
+
 }
-.mobile-lefthero p{
+
+.mobile-lefthero p {
     font-size: 50px;
     margin: 40px 0;
 }
-.mobile-icon{
+
+.mobile-icon {
     border: 3px solid white;
     border-radius: 50%;
     height: 50px;
@@ -63,6 +168,7 @@
     font-size: 20px;
     margin: 60px 0 100px 47%;
 }
+
 /* mobile version ends */
 
 /* hero section starts here */
@@ -77,33 +183,39 @@
     width: 40%;
     margin: 40px auto;
 }
-.left-hero span{
+
+.left-hero span {
     color: var(--text-color);
     line-height: 25px;
 }
-.burger-container{
+
+.burger-container {
     /* border: 3px solid purple; */
     width: 93%;
     display: flex;
     justify-content: space-between;
 }
-.menu{
+
+.menu-1 {
     /* border: 3px solid yellow; */
     height: 100px;
     width: 100px;
 }
-.hamburger{
+
+.comment {
     color: white;
     border: 3px solid white;
     width: 50px;
     height: 50px;
     display: flex;
+    cursor: pointer;
     justify-content: center;
     align-items: center;
     margin-top: 45px;
-    
+
     border-radius: 50%;
 }
+
 .right-hero {
     /* border: 3px solid blue; */
     width: 50%;
@@ -119,10 +231,17 @@
     margin-bottom: 150px;
 }
 
-.header span {
-    /* border: 2px solid black; */
-    margin-top: 10px;
-    color: var(--text-color);
+.header ul {
+    /* border: 3px solid tomato; */
+    margin: 10px 70px 0 0;
+    list-style: none;
+    display: flex;
+}
+
+.header a {
+    color: rgb(105, 83, 83);
+    text-decoration: none;
+    padding: 15px;
 }
 
 .header h2 {
@@ -149,6 +268,7 @@
     align-items: center;
     justify-content: center;
     width: 50px;
+    cursor: pointer;
     height: 50px;
     color: rgb(145, 70, 70);
     font-size: 20px;
@@ -173,9 +293,11 @@
     justify-content: space-between;
     margin: 0 auto;
 }
-.left-content{
+
+.left-content {
     width: 80%;
 }
+
 .left-content p {
     /* line-height: 20px; */
     font-size: 50px;
@@ -189,16 +311,20 @@
     border: 2px solid rgb(250, 240, 240);
     background: rgb(250, 240, 240);
     align-items: center;
+    cursor: pointer;
     font-weight: bold;
     font-family: Arial, Helvetica, sans-serif;
 }
-.button-btn{
+
+.button-btn {
     color: rgb(145, 70, 70);
     /* display: flex; */
     align-items: center;
     font-weight: bold;
+    cursor: pointer;
     font-family: Arial, Helvetica, sans-serif;
 }
+
 .button i {
     margin-left: 7px;
     font-size: 15px;
@@ -219,48 +345,253 @@
     margin-bottom: 20px 0;
     padding: 20px;
 }
-.content h3{
+
+.content h3 {
     color: rgb(145, 70, 70);
     font-family: Arial, Helvetica, sans-serif;
     margin-bottom: 10px;
 }
-.content p{
+
+.content p {
     line-height: 25px;
     color: var(--text-color);
     font-family: Arial, Helvetica, sans-serif;
 }
-.info{
+
+/* info section starts here */
+.info {
     /* border: 3px solid yellow; */
     width: 90%;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
-    margin-bottom: 100px;
+    margin-bottom: 70px;
 }
-.left-info  p{
+
+.left-info p {
     font-size: 250%;
 }
-.left-info nav{
+
+.left-info nav {
     color: var(--text-color);
     margin: 15px 0;
     font-family: Arial, Helvetica, sans-serif;
 }
-.right-info{
+
+.right-info {
     /* border: 3px solid purple; */
     display: flex;
     align-items: center;
     justify-content: center;
     font-family: Arial, Helvetica, sans-serif;
 }
-.mail{
+
+.mail {
     color: rgb(116, 90, 90);
     /* border: 3px solid tomato; */
     background: rgb(245, 237, 237);
-    padding: 10px 150px 10px 10px; 
+    padding: 10px 150px 10px 10px;
     margin-right: 15px;
 }
-.sub{
+
+.sub {
     background: black;
     color: white;
     padding: 10px;
 }
+.sub:hover{
+    cursor: pointer;
+}
+
+/* info section ends here */
+
+ /* what we do section */
+ .pics-holder{
+    /* border: 3px solid tomato; */
+    width: 95%;
+    margin: 0 0 0 67px;
+ }
+ .pics-text{
+    display: none;
+    font-size: large;
+    font-weight: bolder;
+    margin-top: 15px;
+ }
+ .pics-container{
+    /* border: 3px solid green; */
+    display: flex;
+    justify-content: space-between;
+ }
+ .pics-card{
+    /* border: 3px solid purple; */
+    width: 32.5%;
+    height: 650px;
+ }
+ .pics-card img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+ }
+ /* what we do ends */
+
+/* inspiration section */
+ .inspiration{
+    /* border: 3px solid black; */
+    width: 90%;
+    display: flex;
+    margin: 30px auto;
+ }
+ .left-inspiration{
+    /* border: 3px solid blue; */
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+ }
+ .left-inspiration h3{
+    font-size: 35px;
+    color: rgb(54, 42, 42);
+ }
+ .left-inspiration p{
+    line-height: 25px;
+    color: var(--text-color);
+ }
+ .right-inspiration{
+    /* border: 3px solid tomato; */
+    width: 40%;
+    display: flex;
+    justify-content: center;
+ }
+ .right-inspiration button{
+    border: 2px solid rgb(145, 70, 70);
+    border-radius: 50%;
+    background-color: white;
+    width: 50px;
+    cursor: pointer;
+    height: 50px;
+    margin-right: 10px;
+    color: rgb(145, 70, 70);
+    font-size: 20px;
+ }
+/* inspiration section ends */
+
+ /* footer section starts */
+ .footer{
+    /* border: 3px solid green; */
+    background: rgb(250, 240, 240);
+ }
+ .footer-content{
+    /* border: 3px solid tomato; */
+    width: 90%;
+    margin: 20px auto ;
+    display: flex;
+    justify-content: space-between;
+ }
+ .right-footer{
+    /* border: 3px solid black; */
+    width: 65%;
+    display: flex;
+    margin-top: 7px;
+    justify-content: space-between;
+ }
+ .right-footer h2{
+    font-size: 35px;
+ }
+ .footer-container{
+    /* border: 3px solid purple; */
+    display: flex;
+    justify-content: space-between;
+    width: 85%;
+    font-family: Arial, Helvetica, sans-serif;
+ }
+ .footer-container ul{
+    list-style: none;
+ }
+ .footer-container li{
+    margin-bottom: 5px;
+    color: var(--text-color);
+ }
+ .footer-container span{
+    margin-top: 17px;
+    margin-bottom: 10px;
+    display: flex;
+    font-size: larger;
+    font-weight: bolder;
+    color: rgb(54, 42, 42);
+ }
+ .left-footer{
+    /* border: 3px solid blue; */
+    width: 25%;
+ }
+ .footer-image{
+    /* border: 3px solid yellow; */
+    width: 60%;
+    height: 150px;
+ }
+ .footer-image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+ }
+ .left-footer .head{
+    color: rgb(145, 70, 70);
+    margin-bottom: 25px;
+ }
+ .left-footer p{
+    line-height: 20px;
+    margin: 20px 0;
+    color: var(--text-color);
+ }
+ .footer-icons{
+    /* border: 3px solid black; */
+    width: 90%;
+    margin: 0 auto;
+ }
+ .footer-icons-container a{
+     text-decoration: none;
+     color: rgb(54, 42, 42);
+ }
+ .footer-icons-container{
+    /* border: 3px solid tomato; */
+    margin: 50px 0 20px 0;
+    display: flex;
+    justify-content: center;
+ }
+ .footer-icons-container span{
+     /* display: block; */
+     border: 3px solid rgb(145, 70, 70);
+     height: 40px;
+     width: 40px;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     border-radius: 50%;
+     margin: 0 5px;
+ }
+ .footer-comment{
+    /* border: 3px solid red; */
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    margin: 15px auto;
+ }
+ .left-comment{
+    /* border: 3px solid purple; */
+    /* width: 65%; */
+    color:rgb(116, 90, 90);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ }
+ .right-comment{
+    /* border: 3px solid tomato; */
+    /* width: 40%; */
+    display: flex;
+    align-items: center;
+    text-align: center;
+    /* justify-content: center; */
+    /* padding: 10px; */
+    color: rgb(116, 90, 90);
+ }
+ .right-comment p{
+    padding-right: 15px;
+ }

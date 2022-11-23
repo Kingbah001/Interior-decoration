@@ -3,7 +3,7 @@
    .hero{
     display: none;
    }
-   .hamburger{
+   .comment{
       display: none;
    }
    .mobile-hero{
@@ -15,6 +15,7 @@
       padding-left: 20px;
       /* text-align: center; */
    }
+   
    .second-content{
       display: block;
    }
@@ -48,6 +49,68 @@
       display: flex;
       align-items: center;
       justify-content: center;
+   }
+   .right-inspiration{
+      display: none;
+   }
+   .pics-container{
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row-reverse;
+   }
+   .pics-card{
+      width: 100%;
+      object-position: bottom;
+      /* height: 25%; */
+      margin-bottom: 50px;
+   }
+   .pics-text{
+      display: flex;
+   }
+   .pics-holder{
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column-reverse;
+   }
+   .left-inspiration{
+      width: 100%;
+      display: block;
+   }
+   .left-inspiration h3{
+      margin-bottom: 20px;
+   }
+   .footer-content{
+      display: block;
+   }
+   .heading{
+      margin: 20px 0 5px 0;
+   }
+   .footer-container{
+      display: flex;
+      flex-direction: column-reverse;
+   }
+   .right-footer{
+      display: block;
+      width: 100%;
+   }
+   .right-footer h2{
+      display: flex;
+      justify-content: center;
+   }
+   .left-footer{
+      width: 100%;
+   }
+   .footer-image{
+      height: 50%;
+      width: 50%;
+   }
+   .footer-comment{
+      display: flex;
+      flex-direction: column-reverse;
+      /* align-items: center; */
+   }
+   .right-comment{
+      margin: 25px 0 15px 0;
    }
 
 }
